@@ -9,7 +9,7 @@ namespace PL
         private readonly DataManipulator _dataManipulator;
         private readonly CreateEntity _createEntity;
 
-        public CommandsList(DataPresenter dataPresenter,  DataManipulator dataManipulator, CreateEntity createEntity)
+        public CommandsList(DataPresenter dataPresenter, DataManipulator dataManipulator, CreateEntity createEntity)
         {
             _dataPresenter = dataPresenter;
             _dataManipulator = dataManipulator;
@@ -86,7 +86,20 @@ namespace PL
 
         public void Special()
         {
-            ConsoleMenu.WriteItem(SpecialSearcher.Start());
+            var matches = string.Empty;
+            var count = 0;
+
+            SpecialSearcher.Start(ref matches, ref count);
+
+            if (matches == string.Empty)
+            {
+                ConsoleMenu.WriteItem("\nЗбігів не знайдено.\n");
+                return;
+            }
+
+            ConsoleMenu.WriteItem($"\nКількість студентів 3-го курсу, які проживають в Україні - {count}.");
+            ConsoleMenu.WriteItem("Їх дані:\n");
+            ConsoleMenu.WriteItem(matches);
         }
 
         public void Search()
@@ -94,16 +107,16 @@ namespace PL
             var firstName = ConsoleMenu.ReadItem("Введіть ім'я шуканої людини:");
             var lastName = ConsoleMenu.ReadItem("Введіть прізвище шуканої людини:");
 
-            var result = _dataPresenter.GetConcretePersonInfo(firstName, lastName);
+            var matches = _dataPresenter.GetConcretePersonInfo(firstName, lastName);
 
-            if (result == string.Empty)
+            if (matches == string.Empty)
             {
                 ConsoleMenu.WriteItem("\nЗбігів не знайдено.\n");
                 return;
             }
 
             ConsoleMenu.WriteItem("\nРезультат пошуку:");
-            ConsoleMenu.WriteItem(_dataPresenter.GetConcretePersonInfo(firstName, lastName) + "\n");
+            ConsoleMenu.WriteItem(matches);
         }
 
         public void Clear()
@@ -132,6 +145,8 @@ namespace PL
             var fullPath = path + fileName + fileExtension;
 
             PathContainer.SetPath(fullPath);
+
+            ConsoleMenu.WriteItem("Шлях до файлу успішно змінено.\n");
         }
     }
 }

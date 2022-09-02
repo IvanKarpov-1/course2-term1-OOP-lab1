@@ -4,7 +4,7 @@
     {
         public string Do()
         {
-            return "Playing chess...";
+            return "Грає в шахи...";
         }
     }
 }

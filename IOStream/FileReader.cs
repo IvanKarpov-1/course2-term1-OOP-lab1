@@ -7,10 +7,13 @@ namespace IOStream
     {
         private readonly string _path = PathContainer.Path;
 
-        public FileReader() { }
+        public FileReader()
+        {
+        }
+
         public FileReader(string path)
         {
-            this._path = path;
+            _path = path;
         }
 
         public string Read()
@@ -20,9 +23,12 @@ namespace IOStream
             {
                 text = file.ReadToEnd();
             }
+
             return text;
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+        }
     }
 }

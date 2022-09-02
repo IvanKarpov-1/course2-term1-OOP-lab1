@@ -15,17 +15,19 @@ namespace DAL
             {
                 var valuesFromPropertyArray = (Array)property.GetValue(dataStorage);
 
-                for (int i = 0; i < valuesFromPropertyArray.Length; i++)
+                for (var i = 0; i < valuesFromPropertyArray.Length; i++)
                 {
                     var singleValue = valuesFromPropertyArray.GetValue(i);
                     var typeOfValue = singleValue.GetType();
 
-                    data += $"{singleValue.ToString().Remove(0,4)} ";
+                    data += $"{singleValue.ToString().Remove(0, 4)} ";
                     data += $"{typeOfValue.GetProperty("FirstName")?.GetValue(singleValue)}";
                     data += $"{typeOfValue.GetProperty("LastName")?.GetValue(singleValue)}\n";
                     data += "{ ";
 
-                    foreach (var valuesProperty in typeOfValue.GetProperties(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).Reverse())
+                    foreach (var valuesProperty in typeOfValue.GetProperties(BindingFlags.Instance |
+                                                                             BindingFlags.NonPublic |
+                                                                             BindingFlags.Public | BindingFlags.Static).Reverse())
                     {
                         if (valuesProperty.PropertyType.IsArray == false)
                         {
@@ -44,6 +46,8 @@ namespace DAL
             }
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+        }
     }
 }

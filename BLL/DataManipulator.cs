@@ -6,11 +6,14 @@ namespace BLL
     {
         private DataStorage _dataStorage;
 
-        public DataManipulator(DataStorage dataStorage) => _dataStorage = dataStorage;
+        public DataManipulator(DataStorage dataStorage)
+        {
+            _dataStorage = dataStorage;
+        }
 
         public void Save()
         {
-            using (var dataSaver  = new DataSaver())
+            using (var dataSaver = new DataSaver())
             {
                 dataSaver.Save(_dataStorage);
             }

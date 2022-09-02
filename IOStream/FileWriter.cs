@@ -7,7 +7,10 @@ namespace IOStream
     {
         private readonly string _path = PathContainer.Path;
 
-        public FileWriter() { }
+        public FileWriter()
+        {
+        }
+
         public FileWriter(string path)
         {
             _path = path;
@@ -21,6 +24,8 @@ namespace IOStream
             }
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+        }
     }
 }

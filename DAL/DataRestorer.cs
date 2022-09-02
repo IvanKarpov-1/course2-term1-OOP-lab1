@@ -9,6 +9,8 @@ namespace DAL
     {
         public void Restore(ref DataStorage dataStorage)
         {
+            dataStorage.SetEmpty();
+
             string data;
 
             using (var fileReader = new FileReader())
@@ -29,7 +31,8 @@ namespace DAL
                     if (regex.IsMatch(el) == false) continue;
                     var temp = regex.Match(el).Value.Replace("\": \"", " ").Split(' ');
                     var type = obj.GetType().GetProperty(temp[0])?.PropertyType;
-                    var convertedValue = Convert.ChangeType(temp[1], type, new NumberFormatInfo() { NumberDecimalSeparator = "." });
+                    var convertedValue = Convert.ChangeType(temp[1], type,
+                        new NumberFormatInfo() { NumberDecimalSeparator = "." });
                     obj.GetType().GetProperty(temp[0])?.SetValue(obj, convertedValue);
                 }
 
@@ -37,6 +40,8 @@ namespace DAL
             }
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+        }
     }
 }

@@ -4,8 +4,12 @@
     {
         public string Salary { get; protected set; }
 
-        protected Employee() { }
-        protected Employee(string salary, string firstName, string lastName, ISpecialBehavior specialBehavior) : base(firstName, lastName, specialBehavior)
+        protected Employee()
+        {
+        }
+
+        protected Employee(string salary, string firstName, string lastName, ISpecialBehavior specialBehavior) : base(
+            firstName, lastName, specialBehavior)
         {
             Salary = salary;
         }

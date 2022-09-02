@@ -8,7 +8,10 @@ namespace DAL
         public string FirstName { get; protected set; }
         public ISpecialBehavior[] SpecialBehaviors { get; private set; } = new ISpecialBehavior[] { new PlayChess() };
 
-        protected Person() { }
+        protected Person()
+        {
+        }
+
         protected Person(string firstName, string lastName, ISpecialBehavior specialBehavior)
         {
             FirstName = firstName;

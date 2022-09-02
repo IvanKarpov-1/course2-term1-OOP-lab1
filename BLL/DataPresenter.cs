@@ -10,7 +10,10 @@ namespace BLL
     {
         private readonly DataStorage _dataStorage;
 
-        public DataPresenter(DataStorage dataStorage) => _dataStorage = dataStorage;
+        public DataPresenter(DataStorage dataStorage)
+        {
+            _dataStorage = dataStorage;
+        }
 
         public string GetFullInfo()
         {
@@ -70,7 +73,9 @@ namespace BLL
                     data += $"{typeOfValue.GetProperty("FirstName")?.GetValue(singleValue)}";
                     data += $"{typeOfValue.GetProperty("LastName")?.GetValue(singleValue)}\n";
 
-                    foreach (var valuesProperty in typeOfValue.GetProperties(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).Reverse())
+                    foreach (var valuesProperty in typeOfValue.GetProperties(BindingFlags.Instance |
+                                                                             BindingFlags.NonPublic |
+                                                                             BindingFlags.Public | BindingFlags.Static).Reverse())
                     {
                         if (valuesProperty.PropertyType.IsArray == false)
                         {

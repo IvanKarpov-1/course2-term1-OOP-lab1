@@ -8,8 +8,12 @@
         public string Country { get; private set; }
         public string NumberOfScorebook { get; private set; }
 
-        public Student() { }
-        public Student(string course, string studentId, double gpa, string country, string numberOfScorebook, string firstName, string lastName) : base(firstName, lastName, new Study())
+        public Student()
+        {
+        }
+
+        public Student(string course, string studentId, double gpa, string country, string numberOfScorebook,
+            string firstName, string lastName) : base(firstName, lastName, new Study())
         {
             Course = course;
             StudentId = studentId;

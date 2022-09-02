@@ -10,6 +10,11 @@ namespace DAL
 
         public DataStorage()
         {
+            SetEmpty();
+        }
+
+        public void SetEmpty()
+        {
             Students = Array.Empty<Student>();
             McdonaldsWorkers = Array.Empty<McdonaldsWorker>();
             Managers = Array.Empty<Manager>();
@@ -17,7 +22,7 @@ namespace DAL
 
         public void Add(Person entity)
         {
-            var thisProperties = this.GetType().GetProperties();
+            var thisProperties = GetType().GetProperties();
 
             foreach (var property in thisProperties)
             {

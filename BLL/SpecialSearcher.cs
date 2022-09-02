@@ -6,7 +6,7 @@ namespace BLL
 {
     public static class SpecialSearcher
     {
-        public static string Start()
+        public static void Start(ref string matches, ref int count)
         {
             string rawData;
             var studentsData = new string[] { };
@@ -32,10 +32,11 @@ namespace BLL
                     element.Contains("\"Course\": \"3\""))
                 {
                     searchedData += $"{element}\n";
+                    count++;
                 }
             }
 
-            return DataPresenter.TransformDataIntoGeneralView(searchedData);
+            matches = DataPresenter.TransformDataIntoGeneralView(searchedData);
         }
     }
 }

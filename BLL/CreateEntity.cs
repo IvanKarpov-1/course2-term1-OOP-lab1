@@ -6,6 +6,7 @@ namespace BLL
     public class CreateEntity
     {
         private readonly DataStorage _dataStorage;
+
         private readonly Type[] _persons =
         {
             typeof(Student),
@@ -13,7 +14,10 @@ namespace BLL
             typeof(Manager)
         };
 
-        public CreateEntity(DataStorage dataStorage) => _dataStorage = dataStorage;
+        public CreateEntity(DataStorage dataStorage)
+        {
+            _dataStorage = dataStorage;
+        }
 
         public void Create(EntitiesType entityType, object[] parameters)
         {

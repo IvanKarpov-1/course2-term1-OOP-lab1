@@ -4,7 +4,7 @@
     {
         public string Do()
         {
-            return "Taking order...";
+            return "Приймає замовлення...";
         }
     }
 }

@@ -69,8 +69,8 @@ namespace Lab1
                         ConsoleMenu.WriteItem("Команда введена невірно! Спробуйте ще раз");
                         break;
                 }
-
             } while (input != "/end");
+
             ConsoleMenu.WriteItem("Програма завершила роботу. Натисніть любу клавішу для виходу.");
         }
     }

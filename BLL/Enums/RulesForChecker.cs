@@ -11,6 +11,6 @@
         Diploma,
         CountOfSubordinates,
         Path,
-        FileExtension,
+        FileExtension
     }
 }

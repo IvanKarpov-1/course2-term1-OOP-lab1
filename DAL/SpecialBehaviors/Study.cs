@@ -4,7 +4,7 @@
     {
         public string Do()
         {
-            return "Studying...";
+            return "Вчиться...";
         }
     }
 }

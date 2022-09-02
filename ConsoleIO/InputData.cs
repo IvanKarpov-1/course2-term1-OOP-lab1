@@ -23,7 +23,8 @@ namespace PL
         public static double Gpa()
         {
             var formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
-            return double.Parse(AskForData("Введіть середній бал студента (0.00 - 100.00):", RulesForChecker.Gpa), formatter);
+            return double.Parse(AskForData("Введіть середній бал студента (0.00 - 100.00):", RulesForChecker.Gpa),
+                formatter);
         }
 
         public static string Country()
@@ -78,8 +79,10 @@ namespace PL
                     text = ConsoleMenu.ReadItem();
                     continue;
                 }
+
                 break;
             } while (true);
+
             return text;
         }
     }
