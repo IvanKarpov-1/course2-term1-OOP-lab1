@@ -1,0 +1,44 @@
+Student IvanKarpov
+{ "FirstName": "Ivan",
+"LastName": "Karpov",
+"NumberOfScorebook": "14742679",
+"Country": "Ukraine",
+"Gpa": "9633",
+"StudentId": "FD34622457",
+"Course": "3"};
+Student SergeyPodskyi
+{ "FirstName": "Sergey",
+"LastName": "Podskyi",
+"NumberOfScorebook": "46835793",
+"Country": "Ukraine",
+"Gpa": "9436",
+"StudentId": "FV58545802",
+"Course": "3"};
+Student AnnaRinska
+{ "FirstName": "Anna",
+"LastName": "Rinska",
+"NumberOfScorebook": "64268042",
+"Country": "Poland",
+"Gpa": "100",
+"StudentId": "ED35727951",
+"Course": "3"};
+McdonaldsWorker DavidBrown
+{ "FirstName": "David",
+"LastName": "Brown",
+"Salary": "$142,00",
+"Diploma": "False"};
+McdonaldsWorker DavidBrown
+{ "FirstName": "David",
+"LastName": "Brown",
+"Salary": "$999,99",
+"Diploma": "False"};
+Manager EnrewProkopchuck
+{ "FirstName": "Enrew",
+"LastName": "Prokopchuck",
+"Salary": "$500,99",
+"CountOfSubordinates": "0"};
+Manager KarlosGarsia
+{ "FirstName": "Karlos",
+"LastName": "Garsia",
+"Salary": "$155,53",
+"CountOfSubordinates": "5"};
