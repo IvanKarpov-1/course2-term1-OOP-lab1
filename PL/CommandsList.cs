@@ -7,13 +7,13 @@ namespace PL
     {
         private readonly DataPresenter _dataPresenter;
         private readonly DataManipulator _dataManipulator;
-        private readonly CreateEntity _createEntity;
+        private readonly EntityCreator _entityCreator;
 
-        public CommandsList(DataPresenter dataPresenter, DataManipulator dataManipulator, CreateEntity createEntity)
+        public CommandsList(DataPresenter dataPresenter, DataManipulator dataManipulator, EntityCreator entityCreator)
         {
             _dataPresenter = dataPresenter;
             _dataManipulator = dataManipulator;
-            _createEntity = createEntity;
+            _entityCreator = entityCreator;
         }
 
         public void Help()
@@ -36,7 +36,15 @@ namespace PL
 
         public void Show()
         {
-            ConsoleMenu.WriteItem(_dataPresenter.GetFullInfo());
+            var data = _dataPresenter.GetFullInfo();
+
+            if (data == string.Empty)
+            {
+                ConsoleMenu.WriteItem("Список порожній.\n");
+                return;
+            }
+
+            ConsoleMenu.WriteItem(data);
         }
 
         public void AddStudent()
@@ -51,7 +59,7 @@ namespace PL
 
             object[] parameters = { course, studentId, gpa, country, numberOfScoreBook, firstName, lastName };
 
-            _createEntity.Create(EntitiesType.Student, parameters);
+            _entityCreator.Create(EntitiesType.Student, parameters);
 
             ConsoleMenu.WriteItem("Студента додано.");
         }
@@ -65,7 +73,7 @@ namespace PL
 
             object[] parameters = { diploma, salary, firstName, lastName };
 
-            _createEntity.Create(EntitiesType.McDonaldsWorker, parameters);
+            _entityCreator.Create(EntitiesType.McDonaldsWorker, parameters);
 
             ConsoleMenu.WriteItem("Працівника макдональдсу додано.");
         }
@@ -79,7 +87,7 @@ namespace PL
 
             object[] parameters = { countOfSubordinates, salary, firstName, lastName };
 
-            _createEntity.Create(EntitiesType.Manager, parameters);
+            _entityCreator.Create(EntitiesType.Manager, parameters);
 
             ConsoleMenu.WriteItem("Менеджера додано.");
         }

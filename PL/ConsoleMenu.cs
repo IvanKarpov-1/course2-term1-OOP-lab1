@@ -2,7 +2,7 @@
 
 namespace PL
 {
-    public class ConsoleMenu
+    public static class ConsoleMenu
     {
         public static void WriteItem(string item)
         {

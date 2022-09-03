@@ -3,7 +3,7 @@ using System;
 
 namespace BLL
 {
-    public class CreateEntity
+    public class EntityCreator
     {
         private readonly DataStorage _dataStorage;
 
@@ -14,7 +14,7 @@ namespace BLL
             typeof(Manager)
         };
 
-        public CreateEntity(DataStorage dataStorage)
+        public EntityCreator(DataStorage dataStorage)
         {
             _dataStorage = dataStorage;
         }

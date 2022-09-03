@@ -39,12 +39,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateEntity.cs" />
+    <Compile Include="EntityCreator.cs" />
     <Compile Include="DataManipulator.cs" />
     <Compile Include="DataPresenter.cs" />
     <Compile Include="Enums\EntitiesType.cs" />
     <Compile Include="InputChecker.cs" />
-    <Compile Include="Enums\RulesForChecker.cs" />
+    <Compile Include="Enums\NameOfRulesForChecker.cs" />
     <Compile Include="SpecialSearcher.cs" />
   </ItemGroup>
   <ItemGroup>

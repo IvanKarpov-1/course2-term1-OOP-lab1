@@ -14,7 +14,7 @@ namespace Lab1
             var dataStorage = new DataStorage();
             var dataPresenter = new DataPresenter(dataStorage);
             var dataManipulator = new DataManipulator(dataStorage);
-            var createEntity = new CreateEntity(dataStorage);
+            var createEntity = new EntityCreator(dataStorage);
             _commandsList = new CommandsList(dataPresenter, dataManipulator, createEntity);
         }
 

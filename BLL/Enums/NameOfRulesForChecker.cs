@@ -1,6 +1,6 @@
 ﻿namespace BLL
 {
-    public enum RulesForChecker
+    public enum NameOfRulesForChecker
     {
         NameAndCountry,
         Course,

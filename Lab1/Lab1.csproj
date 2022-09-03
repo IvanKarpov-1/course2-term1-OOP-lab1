@@ -59,13 +59,13 @@
       <Project>{492e8943-f9d3-4045-bdf8-116b0bfac4ff}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ConsoleIO\PL.csproj">
-      <Project>{5fc267a1-6cd8-4c3e-a78d-93b6b014b604}</Project>
-      <Name>PL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{e4072ff5-3403-4fcc-8a22-897747bfe7c7}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PL\PL.csproj">
+      <Project>{5fc267a1-6cd8-4c3e-a78d-93b6b014b604}</Project>
+      <Name>PL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
